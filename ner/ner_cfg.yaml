@@ -1,0 +1,64 @@
+data_dir: /home/ubuntu/aEye/old/ner_data
+out_dir: /home/ubuntu/aEye/old/ner_result
+max_length: 32
+model_cfg:
+  EncoderRNN:
+    dropout_p: 0.1
+    hidden_size: 128
+  CnnEncoder:
+    enc_layers: [[128, 64], [64, 128], [128, 256], [256, 512]]
+  CnnDecoder:
+    bottleneck: [512, 1024]
+    up_layers: [[1024, 512], [512, 256], [256, 128], [128, 64]]
+    dec_layers: [[1024, 512], [512, 256], [256, 128], [128, 64]]
+
+  TinyCnnEncoder:
+    enc_layers: [[32, 64], [64, 64], [64, 64], [64, 128]]
+  TinyCnnDecoder:
+    bottleneck: [128, 256]
+    up_layers: [[256, 128], [128, 64], [64, 32], [32, 32]]
+    dec_layers: [[256, 128], [128, 64], [96, 32], [96, 32]]
+
+  LinearDecoder:
+    hidden_size: 128
+  DecoderRNN:
+    hidden_size: 128
+  AttnDecoderRNN:
+    dropout_p: 0.1
+    hidden_size: 128
+train_cfg:
+  bs: 16
+  lr: 0.0001
+  n_epochs: 100
+  ckpt_freq: 5
+  stop_patience: 15
+  stop_metric: eval_loss
+
+#  encoder: CnnEncoder
+#  decoder: CnnDecoder
+
+#  encoder: TinyCnnEncoder
+#  decoder: TinyCnnDecoder
+
+#  encoder: EncoderRNN
+#  decoder: LinearDecoder
+
+#  encoder: EncoderRNN
+#  decoder: DecoderRNN
+
+  encoder: EncoderRNN
+  decoder: AttnDecoderRNN
+
+  enable_class_weight: false
+data_cfg:
+  n_pad: 0
+#  data_set: eng_fra
+  data_set: mac_2020
+
+  simple_cleaners: false
+  advance_cleaners: false
+#  simple_cleaners: true
+#  advance_cleaners: true
+
+  enable_phonemize: false
+  enable_expand_abbreviations: false
