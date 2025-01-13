@@ -113,11 +113,21 @@ data_cfg:
 
   enable_phonemize: false            # Phonemization flag to convert text into phonetic representation
   enable_expand_abbreviations: false # Flag to expand abbreviations in the text
-
-
+```
 ## License
 This project is licensed under the MIT License. See the LICENSE file for details.
 
 ## Contributing
 Feel free to raise issues or create pull requests to improve the project.
+
+## References
+- [BRAT Standoff Format Documentation](https://brat.nlplab.org/standoff.html)
+- [Bionlp 2021 Paper](https://aclanthology.org/2021.bionlp-1.16.pdf)
+- [Named Entity Recognition Overview - GeeksforGeeks](https://www.geeksforgeeks.org/named-entity-recognition/)
+- [Named Entity Recognition Code - GitHub](https://github.com/BeiqiZh/Named-Entity-Recognition/tree/main/code)
+- [Named Entity Recognition with RNN - Kaggle Notebook](https://www.kaggle.com/code/ritvik1909/named-entity-recognition-rnn)
+- [NER Code using Python - GitHub](https://github.com/maxslimb/Named-Entity-Recognition)
+- [VITS GitHub Repository](https://github.com/jaywalnut310/vits.git)
+- [NER Using Keras LSTM and Spacy - Medium Article](https://zhoubeiqi.medium.com/named-entity-recognition-ner-using-keras-lstm-spacy-da3ea63d24c5)
+- [PyTorch Seq2Seq Translation Tutorial](https://github.com/pytorch/tutorials/blob/main/intermediate_source/seq2seq_translation_tutorial.py)
 
